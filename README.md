@@ -1,32 +1,58 @@
-# React + TypeScript + Vite
+# مدرسة صلاح الدين الأيوبي لتحفيظ القرآن الكريم 📖✨
+### بوابة الاستعلام عن مواعيد وتفاصيل تكريم الدارسين (الحفل السنوي 2025–2026)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+منصة تفاعلية حديثة ومصممة خصيصاً لأولياء الأمور والدارسين للاستعلام السريع والدقيق عن نتائج التكريم، مواعيد الحفل، واستخراج بطاقات التكريم الرقمية لمشاركتها والاحتفاء بها.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 المميزات الرئيسية
 
-## React Compiler
+- **بحث ذكي وسريع**:
+  - البحث بالاسم (مع معالجة ذكية للأخطاء الشائعة وحروف الهمزات، التاء المربوطة، والألف المقصورة).
+  - الاستعلام المباشر برقم الجلوس (مع دعم الأرقام العربية والإنجليزية).
+- **تصنيف دقيق للمراكز ومواعيد التكريم**:
+  - تحديد يوم وميعاد الحفل تلقائياً وفقاً للمركز (المركز الأول/الثاني: الجمعة 27 مارس 2026، المركز الثالث/المتفوقين: السبت 28 مارس 2026).
+- **بطاقة تهنئة رقمية مخصصة**:
+  - تصميم فاخر بالهوية القرآنية والإسلامية.
+  - إمكانية تحميل بطاقة التهنئة كصورة عالية الجودة (`PNG`) بضغطة زر لمشاركتها على وسائل التواصل الاجتماعي.
+- **تنبيهات ومعلومات الحفل**:
+  - تفاصيل المكان (قاعة مدرسة صلاح الدين الكبرى - طنطا).
+  - مواعيد الدخول والضوابط التنظيمية للحفل.
+- **تصميم متجاوب بالكامل (RTL Responsive)**:
+  - متوافق مع كافة الهواتف الذكية، الشاشات اللوحية، وأجهزة الكمبيوتر.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ التقنيات المستخدمة
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Frontend**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite 6](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Search Engine**: [Fuse.js](https://www.fusejs.io/) مع خوارزمية تطبيع عربية مخصصة
+- **Image Generation**: [html-to-image](https://github.com/bubkoo/html-to-image)
+- **Testing**: [Vitest](https://vitest.dev/)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+---
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 🚀 التشغيل والتطوير المحلي
+
+1. **تثبيت الحزم**:
+   ```bash
+   npm install
+   ```
+
+2. **تشغيل خادم التطوير**:
+   ```bash
+   npm run dev
+   ```
+
+3. **بناء المشروع للإنتاج**:
+   ```bash
+   npm run build
+   ```
+
+4. **تشغيل الاختبارات**:
+   ```bash
+   npm run test
+   ```
