@@ -1,6 +1,6 @@
 import React, { useRef, useState, useCallback } from 'react';
 import { toPng } from 'html-to-image';
-import { Download, ArrowRight, Calendar, User, Hash, AlertTriangle, CheckCircle, Loader2 } from 'lucide-react';
+import { Download, ArrowRight, Calendar, Clock, User, Hash, AlertTriangle, CheckCircle, Loader2 } from 'lucide-react';
 import type { Student } from '../types/student';
 import logoUrl from '../assets/logo.jpg';
 
@@ -191,9 +191,21 @@ export const AwardCard: React.FC<AwardCardProps> = ({ student, onReset }) => {
               <span>موعد حفل التكريم</span>
             </div>
             {student.isRankRecognized && student.ceremonyDate ? (
-              <p className="text-base sm:text-lg font-extrabold text-[#FFED99]">
-                {student.ceremonyDate}
-              </p>
+              <>
+                <p className="text-base sm:text-lg font-extrabold text-[#FFED99]">
+                  {student.ceremonyDate}
+                </p>
+                <div className="text-xs text-[#F7F3E8]/90 font-medium mt-1 flex items-center justify-center gap-1">
+                  <Clock className="w-3 h-3 text-[#C7A85A]" />
+                  <span>
+                    آخر موعد للحضور:{' '}
+                    {student.attendanceTime ||
+                      (student.normalizedRank === 'FIRST'
+                        ? 'الساعة 3:00 عصرًا'
+                        : 'الساعة 2:00 ظهرًا')}
+                  </span>
+                </div>
+              </>
             ) : (
               <div className="text-xs text-amber-300 font-semibold flex items-center justify-center gap-1">
                 <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
@@ -211,7 +223,11 @@ export const AwardCard: React.FC<AwardCardProps> = ({ student, onReset }) => {
           </div>
           <ol className="text-[11px] sm:text-xs text-[#F7F3E8]/90 space-y-1 pr-3 list-decimal leading-relaxed">
             <li>
-              الحضور قبل الساعة 2:00 ظهرًا، ويُغلق الباب بعدها.
+              {student.normalizedRank === 'FIRST'
+                ? 'الحضور قبل الساعة 3:00 عصرًا، ويُغلق الباب بعدها.'
+                : student.normalizedRank === 'SECOND'
+                ? 'الحضور قبل الساعة 2:00 ظهرًا، ويُغلق الباب بعدها.'
+                : 'الحضور قبل الموعد المحدد (الخميس الساعة 3:00 عصرًا / الجمعة الساعة 2:00 ظهرًا)، ويُغلق الباب بعدها.'}
             </li>
             <li>
               القيد بالمدرسة وسداد الاشتراكات شرطان لاستلام الجائزة.

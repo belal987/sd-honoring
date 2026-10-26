@@ -21,7 +21,7 @@ function normalizeRecord(raw: RawStudentRecord, index: number, sheetKey: string)
   const className = raw['الفرقة'] ? String(raw['الفرقة']).trim() : undefined;
   const level = raw['المستوى'] ? String(raw['المستوى']).trim() : undefined;
 
-  const { normalizedRank, rankDisplay, ceremonyDate, ceremonyDay, isRankRecognized } = classifyRank(rawRank);
+  const { normalizedRank, rankDisplay, ceremonyDate, ceremonyDay, attendanceTime, isRankRecognized } = classifyRank(rawRank);
   const { genderDisplay } = classifyGender(rawGender);
 
   return {
@@ -39,6 +39,7 @@ function normalizeRecord(raw: RawStudentRecord, index: number, sheetKey: string)
     genderDisplay,
     ceremonyDate,
     ceremonyDay,
+    attendanceTime,
     isRankRecognized,
   };
 }

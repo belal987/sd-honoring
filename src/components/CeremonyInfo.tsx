@@ -29,6 +29,10 @@ export const CeremonyInfo: React.FC = () => {
             <p className="text-lg sm:text-xl font-black text-[#FFFEFA]">
               {CEREMONY_DATES.FIRST.date}
             </p>
+            <p className="text-xs text-[#FFED99] font-medium mt-1.5 flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-[#C7A85A]" />
+              <span>آخر موعد للحضور: {CEREMONY_DATES.FIRST.attendanceTime}</span>
+            </p>
           </div>
 
           {/* Second Place Date */}
@@ -42,6 +46,10 @@ export const CeremonyInfo: React.FC = () => {
             <p className="text-lg sm:text-xl font-black text-[#FFFEFA]">
               {CEREMONY_DATES.SECOND.date}
             </p>
+            <p className="text-xs text-[#FFED99] font-medium mt-1.5 flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-[#C7A85A]" />
+              <span>آخر موعد للحضور: {CEREMONY_DATES.SECOND.attendanceTime}</span>
+            </p>
           </div>
         </div>
 
@@ -51,7 +59,7 @@ export const CeremonyInfo: React.FC = () => {
             <Clock className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm text-amber-900 leading-relaxed font-medium">
               <span className="font-bold">تنبيه الحضور: </span>
-              آخر موعد للحضور الساعة 2:00 ظهرًا، ويُغلق الباب بعدها.
+              آخر موعد للحضور يوم الخميس الساعة 3:00 عصرًا، ويوم الجمعة الساعة 2:00 ظهرًا، ويُغلق الباب بعدها.
             </div>
           </div>
 

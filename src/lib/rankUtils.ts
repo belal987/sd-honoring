@@ -7,12 +7,14 @@ export const CEREMONY_DATES = {
     day: 'الخميس',
     formattedDate: '29 أكتوبر 2026',
     label: 'المركز الأول',
+    attendanceTime: 'الساعة 3:00 عصرًا',
   },
   SECOND: {
     date: 'الجمعة، 30 أكتوبر 2026',
     day: 'الجمعة',
     formattedDate: '30 أكتوبر 2026',
     label: 'المركز الثاني',
+    attendanceTime: 'الساعة 2:00 ظهرًا',
   },
 } as const;
 
@@ -24,6 +26,7 @@ export function classifyRank(rawRank: string | undefined): {
   rankDisplay: string;
   ceremonyDate: string | null;
   ceremonyDay: string | null;
+  attendanceTime: string | null;
   isRankRecognized: boolean;
 } {
   if (!rawRank) {
@@ -32,6 +35,7 @@ export function classifyRank(rawRank: string | undefined): {
       rankDisplay: 'غير محدد',
       ceremonyDate: null,
       ceremonyDay: null,
+      attendanceTime: null,
       isRankRecognized: false,
     };
   }
@@ -46,6 +50,7 @@ export function classifyRank(rawRank: string | undefined): {
       rankDisplay: rawRank.trim(),
       ceremonyDate: CEREMONY_DATES.FIRST.date,
       ceremonyDay: CEREMONY_DATES.FIRST.day,
+      attendanceTime: CEREMONY_DATES.FIRST.attendanceTime,
       isRankRecognized: true,
     };
   }
@@ -57,6 +62,7 @@ export function classifyRank(rawRank: string | undefined): {
       rankDisplay: rawRank.trim(),
       ceremonyDate: CEREMONY_DATES.SECOND.date,
       ceremonyDay: CEREMONY_DATES.SECOND.day,
+      attendanceTime: CEREMONY_DATES.SECOND.attendanceTime,
       isRankRecognized: true,
     };
   }
@@ -67,6 +73,7 @@ export function classifyRank(rawRank: string | undefined): {
     rankDisplay: rawRank.trim(),
     ceremonyDate: null,
     ceremonyDay: null,
+    attendanceTime: null,
     isRankRecognized: false,
   };
 }

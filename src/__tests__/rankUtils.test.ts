@@ -11,6 +11,7 @@ describe('Rank and Ceremony Date Classification', () => {
       const result = classifyRank(variant);
       expect(result.normalizedRank).toBe('FIRST');
       expect(result.ceremonyDate).toBe('الخميس، 29 أكتوبر 2026');
+      expect(result.attendanceTime).toBe('الساعة 3:00 عصرًا');
       expect(result.isRankRecognized).toBe(true);
     }
   });
@@ -23,6 +24,7 @@ describe('Rank and Ceremony Date Classification', () => {
       const result = classifyRank(variant);
       expect(result.normalizedRank).toBe('SECOND');
       expect(result.ceremonyDate).toBe('الجمعة، 30 أكتوبر 2026');
+      expect(result.attendanceTime).toBe('الساعة 2:00 ظهرًا');
       expect(result.isRankRecognized).toBe(true);
     }
   });

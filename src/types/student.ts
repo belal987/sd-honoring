@@ -28,6 +28,7 @@ export interface Student {
   genderDisplay: GenderDisplay;
   ceremonyDate: string | null;
   ceremonyDay: string | null;
+  attendanceTime?: string | null;
   isRankRecognized: boolean;
 }
 
